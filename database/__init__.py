@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # Мы тут указываем ссылку на нашу базу данных
-SQLALCHEMY_DATABASE_URI = 'sqlite3:///data.db'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///data.db'
 # Подключаемся к базе
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 # Создаем базу и присоединяемся к ней

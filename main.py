@@ -6,7 +6,7 @@
 
 # Для запуска данного кода нужно использовать: uvicorn main:app --reload
 # Вместо main ставим название файла .py
-
+import uvicorn
 from fastapi import FastAPI
 from api.test_api.tests import test_router
 

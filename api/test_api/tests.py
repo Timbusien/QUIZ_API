@@ -28,8 +28,9 @@ async def check_answer(user_id: int, question_id: int, user_answer: int):
 
 # Добавляем вопросы
 @test_router.post('/add-questions')
-async def add_question(question_text: str, lvl: str, type1: str, type2: str, type3: str, type4: str, correct_answer: int):
+async def add_question(question_text: str, lvl: str, correct_answer: int, type1: str, type2: str, type3: str, type4: str):
     question_result = add_questions(question_text, lvl, correct_answer, type1, type2, type3, type4)
+
     if question_result:
         return {'status': 'Success', 'message': question_result}
     else:

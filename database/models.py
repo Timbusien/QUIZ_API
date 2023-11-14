@@ -19,8 +19,8 @@ class Question(Base):
     lvl = Column(String, nullable=False)
     type1 = Column(String, nullable=False)
     type2 = Column(String, nullable=False)
-    type3 = Column(String, nullable=True)
-    type4 = Column(String, nullable=True)
+    type3 = Column(String, nullable=False)
+    type4 = Column(String, nullable=False)
     correct_answer = Column(Integer, nullable=False)
 
 
@@ -29,7 +29,7 @@ class UserAnswer(Base):
     __tablename__ = 'answers'
     id = Column(String, primary_key=True, autoincrement=True)
     user_id = Column(BigInteger, ForeignKey('users.id'))
-    question_id = Column(BigInteger, ForeignKey('question.id'))
+    question_id = Column(BigInteger, ForeignKey('questions.id'))
     user_answer = Column(Integer, nullable=False)
     correctness = Column(Boolean, default=False)
     answer_date = Column(DateTime)
